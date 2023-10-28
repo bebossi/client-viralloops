@@ -10,10 +10,10 @@ Extra Fields: Allow users to add up to 3 custom fields to the form, including ch
 Save Button: A button that transmits the data to the backend REST API.
 
 #### Stack
-Vite
-React
-Axios 
-Setup
+##### Vite
+##### React
+##### Axios 
+### Test 
 Clone the repository.
 Install the dependencies with npm install or yarn install.
 Start the development server with npm run dev or yarn start.
