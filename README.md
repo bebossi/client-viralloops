@@ -1,28 +1,27 @@
-# React + TypeScript + Vite
+## Overview
+This project is a Form Widget Editor, built using React. The editor allows users to customize the look and feel of a form widget, including its title, subtitle, input fields, and submit button. The client code is responsible for rendering the form widget editor and handling user interactions.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Features
+Login page: Auth with jwt token and cookies.
+Sidebar Settings: A sidebar with settings and customization options for the form widget.
+Dynamic Preview: A live preview of the form widget, reflecting the changes made in the settings sidebar.
+Input Fields: The form should ask for a first name, last name, and email address. Required fields should display an asterisk next to their name in the preview pane.
+Extra Fields: Allow users to add up to 3 custom fields to the form, including checkboxes, radio buttons, and dropdowns.
+Save Button: A button that transmits the data to the backend REST API.
 
-Currently, two official plugins are available:
+#### Stack
+Vite
+React
+Axios 
+Setup
+Clone the repository.
+Install the dependencies with npm install or yarn install.
+Start the development server with npm run dev or yarn start.
+Open a web browser and navigate to http://localhost:5173.
+Testing
+To test the application, you can use the following steps:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# client-viralloops
+Create a new form widget by clicking the "New Form Widget" button.
+Customize the form widget settings and input fields in the sidebar.
+Click the "Save" button to save the form widget.
+Click the "Preview" button to view the rendered HTML file.
