@@ -10,8 +10,8 @@ const SideBar = () => {
   const [showHeading, setShowHeading] = useState(true);
   const [showInputs, setShowInputs] = useState(true);
   const [showCustomFields, setShowCustomFields] = useState(true);
+  const [showButton, setShowButton] = useState(true);
   const formWidgetContext = useContext(FormWidgetContext);
-
   if (!formWidgetContext) {
     return null;
   }
@@ -98,18 +98,27 @@ const SideBar = () => {
               </>
             ) : null}
           </div>
-
           <div>
             <div className="mb-4">
-              <h2 className="text-lg font-semibold mb-4">Button</h2>
-              <TextEditor fieldKey="Button" />
+              <h2
+                className="text-lg font-semibold mb-4 hover:cursor-pointer"
+                onClick={() => setShowButton(!showButton)}
+              >
+                Button
+              </h2>
+              {showButton ? <TextEditor fieldKey="Button" /> : null}
             </div>
           </div>
         </>
       ) : null}
-      <div className="flex gap-x-10 fixed bottom-0 bg-white">
-        <button>Cancel</button>
-        <button onClick={saveChanges}>Save changes</button>
+      <div className="flex justify-around sticky -bottom-4 gap-x-10 bg-white">
+        <button className="rounded-md bg-red-500 font-bold p-2">Cancel</button>
+        <button
+          className="rounded-md bg-green-500 font-bold p-2"
+          onClick={saveChanges}
+        >
+          Save changes
+        </button>
       </div>
     </div>
   );
