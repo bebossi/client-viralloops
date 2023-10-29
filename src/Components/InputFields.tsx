@@ -37,7 +37,9 @@ const InputFields = ({ fieldKey }: TextEditorProps) => {
           type="checkbox"
           id="showInput"
           checked={fieldKey === "EmailInput" ? true : showInput}
-          onChange={() => { fieldKey === "EmailInput"? true : setShowInput(!showInput)}}
+          onChange={() => {
+            fieldKey === "EmailInput" ? true : setShowInput(!showInput);
+          }}
         />
       </div>
       <div className=" mr-2">
@@ -57,7 +59,9 @@ const InputFields = ({ fieldKey }: TextEditorProps) => {
           type="checkbox"
           id="isRequired"
           checked={fieldKey === "EmailInput" ? true : isRequired}
-          onChange={() => { fieldKey === "EmailInput"? true : setIsRequired(!showInput)}}
+          onChange={() => {
+            fieldKey === "EmailInput" ? true : setIsRequired(!isRequired);
+          }}
         />
       </div>
     </div>

@@ -28,15 +28,15 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
         [fieldKey]: {
           label,
           showInput,
-          dropdownOptions
+          dropdownOptions,
         },
       },
     }));
-  }, [label,dropdownOptions, showInput, fieldKey]);
+  }, [fieldSettings, label, dropdownOptions, showInput, fieldKey]);
   return (
     <>
       {fieldKey === "Checkbox" && (
-        <div>
+        <div className="flex gap-x-1">
           <input
             type="checkbox"
             id="showInput"
@@ -50,7 +50,7 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
         </div>
       )}
       {fieldKey === "RadioButton" && (
-        <div className="flex">
+        <div className="flex gap-x-1">
           <input
             type="checkbox"
             id="showInput"

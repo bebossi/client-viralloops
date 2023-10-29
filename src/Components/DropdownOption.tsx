@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { BiPlus } from "react-icons/bi";
 
 interface DropdownOption {
   label: string;
@@ -23,29 +24,38 @@ const DropdownOptionsInput: React.FC<DropdownOptionsInputProps> = ({
     onOptionChange(updatedOptions);
   };
 
+  const addDropdownOption = () => {
+    dropdownOptions.find((option) => {
+      if (option.show === false) return (option.show = true);
+    });
+  };
+
   return (
-    <div>
-      {dropdownOptions?.map((option, index) => (
-        <div className="m-2" key={index}>
-          <input
-            type="checkbox"
-            checked={option.show}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              handleOptionChange(index, { show: e.target.checked })
-            }
-          />
-          <label>{index}</label>
-          <input
-            className="border border-black"
-            type="text"
-            placeholder={`Option ${index + 1}`}
-            value={option.label}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              handleOptionChange(index, { label: e.target.value })
-            }
-          />
-        </div>
-      ))}
+    <div className="flex flex-col justify-center items-start">
+      {dropdownOptions
+        ?.filter((option) => option.show)
+        .map((option, index) => (
+          <div className="ml-1 flex gap-x-2" key={index}>
+            <input
+              type="checkbox"
+              checked={option.show}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleOptionChange(index, { show: e.target.checked })
+              }
+            />
+            <label>{index + 1}</label>
+            <input
+              className="border border-black"
+              type="text"
+              placeholder={`Option ${index + 1}`}
+              value={option.label}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleOptionChange(index, { label: e.target.value })
+              }
+            />
+          </div>
+        ))}
+      <BiPlus size={20} onClick={addDropdownOption} />
     </div>
   );
 };

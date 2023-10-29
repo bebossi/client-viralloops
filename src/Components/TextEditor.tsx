@@ -59,9 +59,9 @@ const TextEditor = ({ fieldKey }: TextEditorProps) => {
   return (
     <>
       <div className="mb-2">
-        <label className="block text-gray-600 mr-2 ">{fieldKey} label</label>
+        <label className="block text-gray-600 mr-2 mb-2 ">{fieldKey} label</label>
         <input
-          className="border-b-2 border-black focus:border-b focus:border-black"
+          className="mb-2 border-b-2 border-black focus:border-b focus:border-black"
           value={label}
           onChange={(e) => setLabel(e.target.value)}
           type="text"
