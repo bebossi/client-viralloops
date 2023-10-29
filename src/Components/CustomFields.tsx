@@ -32,11 +32,17 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
         },
       },
     }));
-  }, [fieldSettings, label, dropdownOptions, showInput, fieldKey]);
+  }, [label, dropdownOptions, showInput, fieldKey]);
+  // const addDropdownOption = () => {
+  //   setDropdownOptions((prevDropdownOptions) => [
+  //     ...prevDropdownOptions!,
+  //     { label: "", show: true },
+  //   ]);
+  // };
   return (
     <>
       {fieldKey === "Checkbox" && (
-        <div className="flex gap-x-1">
+        <div className="flex gap-x-1 bg-gray-200 p-1 rounded-md">
           <input
             type="checkbox"
             id="showInput"
@@ -50,7 +56,7 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
         </div>
       )}
       {fieldKey === "RadioButton" && (
-        <div className="flex gap-x-1">
+        <div className="flex gap-x-1 bg-gray-200 p-1 rounded-md">
           <input
             type="checkbox"
             id="showInput"
@@ -68,8 +74,9 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
           <DropdownOptionsInput
             dropdownOptions={dropdownOptions!}
             onOptionChange={(newOptions) => setDropdownOptions(newOptions)}
+            onAddOption={(newOptions) => setDropdownOptions(newOptions)}
           />
-          <div>
+          <div className="bg-gray-200 p-1 rounded-md gap-x-2 flex">
             <input
               type="checkbox"
               checked={showInput}

@@ -28,7 +28,7 @@ const SideBar = () => {
   };
 
   return (
-    <div className="p-4 border rounded-md">
+    <div className="p-4 border rounded-md w-full h-screen overflow-y-auto">
       <h1
         className=" text-2xl font-bold mb-8 hover:cursor-pointer"
         onClick={() => setShowStyles(!showStyles)}
@@ -107,7 +107,7 @@ const SideBar = () => {
           </div>
         </>
       ) : null}
-      <div className="flex justify-around">
+      <div className="flex gap-x-10 fixed bottom-0 bg-white">
         <button>Cancel</button>
         <button onClick={saveChanges}>Save changes</button>
       </div>

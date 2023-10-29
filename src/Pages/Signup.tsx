@@ -3,7 +3,7 @@ import { api } from "../api";
 import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,7 +15,7 @@ const SignupPage = () => {
         password: password,
       });
 
-      navigate("/form")
+      navigate("/form");
     } catch (err) {
       console.log(err);
     }
@@ -24,7 +24,7 @@ const SignupPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       <div className="bg-white p-8 rounded-lg shadow-lg w-96">
-        <h1 className="text-3xl font-semibold text-center mb-4">Login</h1>
+        <h1 className="text-3xl font-semibold text-center mb-4">Sign up</h1>
         <form onSubmit={handleSubmit}>
           <div className="mb-6">
             <input
