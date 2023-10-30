@@ -51,8 +51,6 @@ const Modal = () => {
                 <div>
                   {fields.FirstNameInput.showInput ? (
                     <input
-                      type="text"
-                      id="password"
                       className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 "
                       placeholder={
                         fields.FirstNameInput.label +
@@ -65,9 +63,6 @@ const Modal = () => {
                 <div>
                   {fields.LastNameInput.showInput ? (
                     <input
-                      type="password"
-                      name="password"
-                      id="password"
                       className="bg-gray-50 border border-gray-300  text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:border-gray-500 dark:placeholder-gray-400 "
                       placeholder={
                         fields.LastNameInput.label +
@@ -90,43 +85,55 @@ const Modal = () => {
                   ) : null}
                 </div>
                 <div>
-                {fields.Checkbox.showInput ? (
-                  <div className="flex">
-                  <input
-                    type="checkbox"
-                    required={fields.Checkbox.isRequired}
-                    className="mr-3"
-
-                  />
-                  <p>{fields.Checkbox.label}</p>
-                  </div>
+                  {fields.Checkbox.showInput ? (
+                    <div className="flex">
+                      <input
+                        type="checkbox"
+                        required={fields.Checkbox.isRequired}
+                        className="mr-3"
+                      />
+                      <p>
+                        {fields.Checkbox.label}{" "}
+                        <span className="font-bold">
+                          {fields.Checkbox.isRequired ? "*" : null}
+                        </span>
+                      </p>
+                    </div>
                   ) : null}
                 </div>
                 <div>
-                {fields.RadioButton.showInput ? (
-                  <div className="flex ">
-                  <input
-                    type="radio"
-                    // required={fields.RadioButton.isRequired}
-                    className="mr-3"
-                  />
-                  <p>{fields.RadioButton.label}</p>
-                  </div>
+                  {fields.RadioButton.showInput ? (
+                    <div className="flex ">
+                      <input
+                        type="radio"
+                        required={fields.RadioButton.isRequired}
+                        className="mr-3"
+                      />
+                      <p>
+                        {fields.RadioButton.label}{" "}
+                        <span className="font-bold">
+                          {fields.RadioButton.isRequired ? "*" : null}
+                        </span>
+                      </p>
+                    </div>
                   ) : null}
                 </div>
                 <div>
-                {fields.Dropdown.showInput ? (
-                  <div className="flex ">
-                   <select>
-              {fields.Dropdown.dropdownOptions!
-                .filter((option) => option.show)
-                .map((option, index) => (
-                  <option key={index} value={option.label}>
-                    {option.label}
-                  </option>
-                ))}
-            </select>
-                  </div>
+                  {fields.Dropdown.showInput ? (
+                    <div className="flex gap-x-2 ">
+                      <select className="border-black border">
+                        {fields.Dropdown.dropdownOptions!.filter(
+                          (option) => option.show
+                        ).map((option, index) => (
+                          <option key={index} value={option.label}>
+                            {option.label}
+                          </option>
+                        ))}
+                      </select>
+                      <p className="font-bold">
+                        {fields.Dropdown.isRequired ? "*" : null}
+                      </p>
+                    </div>
                   ) : null}
                 </div>
                 <div className="flex justify-center items-center">

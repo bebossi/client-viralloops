@@ -59,7 +59,9 @@ const TextEditor = ({ fieldKey }: TextEditorProps) => {
   return (
     <>
       <div className="mb-2">
-        <label className="block text-gray-600 mr-2 mb-2 ">{fieldKey} label</label>
+        <label className="block text-gray-600 mr-2 mb-2 ">
+          {fieldKey} label
+        </label>
         <input
           className="mb-2 border-b-2 border-black focus:border-b focus:border-black"
           value={label}
@@ -112,7 +114,7 @@ const TextEditor = ({ fieldKey }: TextEditorProps) => {
         <>
           <div className="flex justify-between">
             <label className="block text-gray-600">Background color</label>
-            <div className="flex border divide-x-2">
+            <div className="flex border divide-x-2 mb-2">
               <input
                 type="color"
                 onChange={(e) => setBackgroundColor(e.target.value)}

@@ -53,6 +53,17 @@ const SignupPage = () => {
             </button>
           </div>
         </form>
+        <div>
+          <p>
+            Do you have an account?{" "}
+            <span
+              onClick={() => navigate("/login")}
+              className="hover:cursor-pointer underline text-blue-500"
+            >
+              Login page
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );

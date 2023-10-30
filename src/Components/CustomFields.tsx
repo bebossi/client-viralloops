@@ -16,6 +16,7 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
   const fieldSettings = formWidget.fields[fieldKey];
   const [label, setLabel] = useState(fieldSettings.label);
   const [showInput, setShowInput] = useState(fieldSettings.showInput);
+  const [isRequired, setIsRequired] = useState(fieldSettings.isRequired);
   const [dropdownOptions, setDropdownOptions] = useState(
     fieldSettings.dropdownOptions
   );
@@ -29,16 +30,12 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
           label,
           showInput,
           dropdownOptions,
+          isRequired,
         },
       },
     }));
-  }, [label, dropdownOptions, showInput, fieldKey]);
-  // const addDropdownOption = () => {
-  //   setDropdownOptions((prevDropdownOptions) => [
-  //     ...prevDropdownOptions!,
-  //     { label: "", show: true },
-  //   ]);
-  // };
+  }, [label, isRequired, dropdownOptions, showInput, fieldKey]);
+
   return (
     <>
       {fieldKey === "Checkbox" && (
@@ -52,7 +49,19 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
             }}
           />
           <input type="checkbox" />
+
           <input onChange={(e) => setLabel(e.target.value)} value={label} />
+          <div className="flex gap-x-2">
+            <label htmlFor="isRequired" className="ml-2">
+              Required
+            </label>
+            <input
+              type="checkbox"
+              id="isRequired"
+              checked={isRequired}
+              onChange={() => setIsRequired(!isRequired)}
+            />
+          </div>
         </div>
       )}
       {fieldKey === "RadioButton" && (
@@ -67,6 +76,17 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
           />
           <input type="radio" />
           <input onChange={(e) => setLabel(e.target.value)} value={label} />
+          <div className="flex gap-x-2">
+            <label htmlFor="isRequired" className="ml-2">
+              Required
+            </label>
+            <input
+              type="checkbox"
+              id="isRequired"
+              checked={isRequired}
+              onChange={() => setIsRequired(!isRequired)}
+            />
+          </div>
         </div>
       )}
       {fieldKey === "Dropdown" && (
@@ -93,6 +113,17 @@ const CustomFields = ({ fieldKey }: CustomFieldProps) => {
                   </option>
                 ))}
             </select>
+            <div className="flex gap-x-2">
+              <label htmlFor="isRequired" className="ml-2">
+                Required
+              </label>
+              <input
+                type="checkbox"
+                id="isRequired"
+                checked={isRequired}
+                onChange={() => setIsRequired(!isRequired)}
+              />
+            </div>
           </div>
         </>
       )}

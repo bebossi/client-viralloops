@@ -92,39 +92,49 @@ function FormWidgetContextProvider({
       },
       Dropdown: {
         showInput: false,
-        dropdownOptions:[
+        isRequired: false,
+        dropdownOptions: [
           {
             label: "Option 1 ",
-            show: true
-          }, {
+            show: true,
+          },
+          {
             label: "Option 2",
-            show: true
-          }, {
+            show: true,
+          },
+          {
             label: "Option 3",
-            show: true
-          } ,{
+            show: true,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          }, {
+            show: false,
+          },
+          {
             label: "",
-            show: false
-          } 
-        ]
+            show: false,
+          },
+        ],
       },
     },
   });
